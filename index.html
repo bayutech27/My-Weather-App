@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bayo Alabi">
+    <title>Weather App</title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+
+</head>
+<body>
+    
+<main>
+<!--Data Section-->
+<section>
+<div>
+    <h2>Today's Weather</h2>
+</div>
+<p id="time"></p>
+<!--City name and cloud icon-->
+<div  class="city-container">
+<div>
+ <h3 class="city"></h3>  
+</div>
+
+<div class="cloud-sun">
+<i id="cloud" class="fa-solid fa-cloud-rain"></i>
+<i id="sun" class="fa-solid fa-sun"></i>
+</div>
+</div>
+
+<!--Weather and values-->
+<div class="weather">
+<p><i id="weather-icon" class="fa-solid fa-temperature-half"></i> <span id="temperature">0</span></p>
+<p><i id="weather-icon" class="fa-solid fa-droplet"></i> <span id="humidity">0</span></p>
+<p><i id="weather-icon" class="fas fa-wind"></i> <span id="wind">0</span></p>
+</div>
+
+<!--weather description-->
+<div class="update">
+<p class="icon"></p>
+<p id="description">Select city and get today's weather</p>
+</div>
+
+</section>
+
+<!--Imput Section-->
+<section class="input-section">
+
+<h2 class="title-container">Get Current Weather</h2>
+
+<!--Select City Input-->
+<div class="input-container">
+<p>City:</p>
+<select>
+ <option>Lagos</option>
+<option>Abuja, NG</option>
+<option>Cape Town</option>
+<option>Johannesburg</option>
+<option>Nairobi</option>
+<option>Cairo</option>
+<option>Accra</option>
+<option>Addis Ababa</option>
+<option>Dakar</option>
+<option>Casablanca</option>
+
+<option>London</option>
+<option>Paris</option>
+<option>Berlin</option>
+<option>Rome</option>
+<option>Madrid</option>
+
+<option>New York</option>
+<option>Los Angeles</option>
+<option>Toronto</option>
+<option>Mexico City</option>
+
+<option>Dubai</option>
+<option>Riyadh</option>
+<option>Tokyo</option>
+<option>Beijing</option>
+<option>Seoul</option>
+<option>Mumbai</option>
+
+<option>Sydney</option>
+<option>Melbourne</option>
+<option>Sao Paulo</option>
+<option>Buenos Aires</option>
+<option>Rio de Janeiro</option>
+
+<!-- Africa -->
+<option>Kano</option>
+<option>Ibadan</option>
+<option>Port Harcourt</option>
+<option>Durban</option>
+<option>Pretoria</option>
+<option>Algiers</option>
+<option>Tripoli</option>
+<option>Khartoum</option>
+<option>Harare</option>
+<option>Lusaka</option>
+<option>Luanda</option>
+<option>Kampala</option>
+<option>Maputo</option>
+<option>Windhoek</option>
+<option>Freetown</option>
+<option>Abidjan</option>
+<option>Monrovia</option>
+<option>Kinshasa</option>
+<option>Brazzaville</option>
+<option>Mogadishu</option>
+
+<!-- Europe -->
+<option>Amsterdam</option>
+<option>Brussels</option>
+<option>Lisbon</option>
+<option>Vienna</option>
+<option>Budapest</option>
+<option>Warsaw</option>
+<option>Prague</option>
+<option>Stockholm</option>
+<option>Oslo</option>
+<option>Copenhagen</option>
+<option>Helsinki</option>
+<option>Moscow</option>
+<option>Saint Petersburg</option>
+<option>Zurich</option>
+<option>Hamburg</option>
+<option>Munich</option>
+
+<!-- North America -->
+<option>Chicago</option>
+<option>Houston</option>
+<option>Philadelphia</option>
+<option>Phoenix</option>
+<option>San Antonio</option>
+<option>San Diego</option>
+<option>Dallas</option>
+<option>San Jose</option>
+<option>Vancouver</option>
+<option>Montreal</option>
+
+<!-- Asia -->
+<option>Delhi</option>
+<option>Bangalore</option>
+<option>Chennai</option>
+<option>Kolkata</option>
+<option>Jakarta</option>
+<option>Bangkok</option>
+<option>Singapore</option>
+<option>Hong Kong</option>
+<option>Manila</option>
+<option>Baghdad</option>
+<option>Tehran</option>
+<option>Istanbul</option>
+
+<!-- Oceania -->
+<option>Auckland</option>
+<option>Perth</option>
+<option>Honolulu</option>
+
+<!-- South America -->
+<option>Lima</option>
+<option>Santiago</option>
+<option>Caracas</option>
+<option>Curitiba</option>
+
+
+<!-- Africa -->
+<option>Kano</option>
+<option>Ibadan</option>
+<option>Port Harcourt</option>
+<option>Durban</option>
+<option>Pretoria</option>
+<option>Algiers</option>
+<option>Tripoli</option>
+<option>Khartoum</option>
+<option>Harare</option>
+<option>Lusaka</option>
+<option>Luanda</option>
+<option>Kampala</option>
+<option>Maputo</option>
+<option>Windhoek</option>
+<option>Freetown</option>
+<option>Abidjan</option>
+<option>Monrovia</option>
+<option>Kinshasa</option>
+<option>Brazzaville</option>
+<option>Mogadishu</option>
+<option>Douala</option>
+<option>Ouagadougou</option>
+<option>Antananarivo</option>
+<option>Nouakchott</option>
+<option>Bujumbura</option>
+<option>Gaborone</option>
+<option>Lilongwe</option>
+<option>Asmara</option>
+<option>Maseru</option>
+<option>Djibouti City</option>
+<option>N'Djamena</option>
+<option>Conakry</option>
+<option>Malabo</option>
+<option>Moroni</option>
+<option>Port Louis</option>
+<option>Victoria, Seychelles</option>
+<option>Sao Tome</option>
+<option>Libreville</option>
+<option>Mbabane</option>
+<option>Masvingo</option>
+<option>Beira</option>
+<option>Lobito</option>
+<option>Blantyre</option>
+<option>Kigali</option>
+<option>Maputo</option>
+<option>Bamako</option>
+<option>Niamey</option>
+<option>Ouahigouya</option>
+
+<!-- Europe -->
+<option>Amsterdam</option>
+<option>Brussels</option>
+<option>Lisbon</option>
+<option>Vienna</option>
+<option>Budapest</option>
+<option>Warsaw</option>
+<option>Prague</option>
+<option>Stockholm</option>
+<option>Oslo</option>
+<option>Copenhagen</option>
+<option>Helsinki</option>
+<option>Moscow</option>
+<option>Saint Petersburg</option>
+<option>Zurich</option>
+<option>Hamburg</option>
+<option>Munich</option>
+<option>Birmingham</option>
+<option>Manchester</option>
+<option>Glasgow</option>
+<option>Edinburgh</option>
+<option>Rome, IT</option>
+<option>Milan</option>
+<option>Venice</option>
+<option>Florence</option>
+<option>Barcelona</option>
+<option>Valencia</option>
+<option>Seville</option>
+<option>Madrid, ES</option>
+<option>Vienna, AT</option>
+<option>Geneva</option>
+<option>Bern</option>
+<option>Warsaw, PL</option>
+<option>Prague, CZ</option>
+<option>Bratislava</option>
+<option>Bucharest</option>
+<option>Sofia</option>
+<option>Belgrade</option>
+<option>Zagreb</option>
+<option>Ljubljana</option>
+<option>Vilnius</option>
+<option>Riga</option>
+<option>Tallinn</option>
+<option>Helsinki, FI</option>
+<option>Oslo, NO</option>
+<option>Copenhagen, DK</option>
+<option>Luxembourg City</option>
+<option>Monaco</option>
+<option>Andorra la Vella</option>
+
+<!-- North America -->
+<option>Chicago</option>
+<option>Houston</option>
+<option>Philadelphia</option>
+<option>Phoenix</option>
+<option>San Antonio</option>
+<option>San Diego</option>
+<option>Dallas</option>
+<option>San Jose</option>
+<option>Vancouver</option>
+<option>Montreal</option>
+<option>Calgary</option>
+<option>Ottawa</option>
+<option>Edmonton</option>
+<option>Quebec City</option>
+<option>Miami</option>
+<option>Atlanta</option>
+<option>Boston</option>
+<option>Seattle</option>
+<option>Denver</option>
+<option>Washington, D.C.</option>
+<option>Las Vegas</option>
+<option>Detroit</option>
+<option>Minneapolis</option>
+<option>San Francisco</option>
+<option>Portland, OR</option>
+<option>New Orleans</option>
+<option>Toronto, CA</option>
+<option>Guadalajara</option>
+<option>Monterrey</option>
+<option>Vancouver, CA</option>
+
+<!-- Asia -->
+<option>Delhi</option>
+<option>Bangalore</option>
+<option>Chennai</option>
+<option>Kolkata</option>
+<option>Jakarta</option>
+<option>Bangkok</option>
+<option>Singapore</option>
+<option>Hong Kong</option>
+<option>Manila</option>
+<option>Baghdad</option>
+<option>Tehran</option>
+<option>Istanbul</option>
+<option>Karachi</option>
+<option>Lahore</option>
+<option>Ho Chi Minh City</option>
+<option>Hanoi</option>
+<option>Kuala Lumpur</option>
+<option>Jakarta, ID</option>
+<option>Dhaka</option>
+<option>Islamabad</option>
+<option>Beirut</option>
+<option>Amman</option>
+<option>Jerusalem</option>
+<option>Damascus</option>
+<option>Riyadh, SA</option>
+<option>Doha</option>
+<option>Muscat</option>
+<option>Baghdad, IQ</option>
+<option>Tel Aviv</option>
+<option>Seoul</option>
+<option>Tokyo, JP</option>
+<option>Osaka</option>
+<option>Nagoya</option>
+<option>Kyoto</option>
+<option>Yokohama</option>
+
+<!-- Oceania -->
+<option>Auckland</option>
+<option>Perth</option>
+<option>Honolulu</option>
+<option>Brisbane</option>
+<option>Adelaide</option>
+<option>Canberra</option>
+<option>Wellington</option>
+<option>Christchurch</option>
+<option>Darwin</option>
+<option>Gold Coast</option>
+
+<!-- South America -->
+<option>Lima</option>
+<option>Santiago</option>
+<option>Caracas</option>
+<option>Curitiba</option>
+<option>Bogota</option>
+<option>Quito</option>
+<option>Montevideo</option>
+<option>La Paz</option>
+<option>Brasilia</option>
+<option>Recife</option>
+<option>Fortaleza</option>
+<option>Salvador</option>
+<option>Manaus</option>
+<option>Medellin</option>
+<option>Cali</option>
+<option>Rio Branco</option>
+<option>Asuncion</option>
+<option>Buenos Aires, AR</option>
+<option>Porto Alegre</option>
+<option>Maracaibo</option>
+
+
+</select>
+</div>
+
+<!--get weather button-->
+<button>Get Weather</button>
+
+<p class="author">Built by Bayo Alabi</p>
+
+</section>
+
+</main>
+
+
+
+
+</body>
+</html>

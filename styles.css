@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+}
+
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/* Weather Data Section */
+section {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: teal;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    height: 415px;
+    margin-right: 10px;
+    padding: 20px;
+
+}
+
+h2 {
+    font-family: Roboto;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.city-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#time {
+     font-family: Roboto;
+     font-size: 12px;
+     color: white;
+     text-align: center;
+
+}
+
+.city {
+    font-family: Roboto;
+    font-weight: 500;
+    margin-right: 100px;
+    color: white;
+}
+
+#cloud {
+    position: relative;
+    color: white;
+    font-size: 70px;
+    z-index: 1;
+}
+
+
+#sun {
+    position: absolute;
+    font-size: 30px;
+    color: gold;
+    margin-left: -25px;
+    margin-top: -2px;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+.cloud-sun {
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+.cloud-sun:hover {
+    transform: scale(1.1)
+}
+
+.weather {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+}
+
+
+.weather p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    width: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    color: white;
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+.weather p:first-child {
+    margin-left: 15px;
+    color: crimson;
+}
+
+.weather p:nth-child(2){
+    color: aqua;
+}
+
+.weather p:last-child{
+    width: 75px;
+    color: gold;
+}
+
+
+.weather p:hover {
+    transform: scale(1.1);
+}
+
+#weather-icon {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+#temperature, #humidity, #wind {
+    font-family: Roboto;
+    font-size: 14px;
+    color: white;
+}
+
+.update {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    color: NavajoWhite;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+#description {
+    color: white;
+    text-align: center;
+    font-family: Ubuntu;
+}
+
+/* Input Section */
+
+.input-section {
+    height: 415px;
+
+}
+
+.title-container {
+     font-family: Roboto;
+    font-size: 20px;
+    margin-top: -20px;
+    margin-bottom: 100px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin-bottom: 20px;
+
+}
+
+select {
+    width: 150px;
+    height: 25px;
+    background-color: white;
+    color: teal;
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+
+select:focus {
+    outline: none;
+}
+
+button {
+    width: 150px;
+    height: 25px;
+    background-color: white;
+    color: teal;
+    font-family: Roboto;
+    font-weight: 500;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    margin-left: 35px;
+    margin-bottom: 130px;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    
+}
+
+
+.author {
+    
+    font-family: Ubuntu;
+    font-size: 14px;
+    color: white;
+}
+
+
+/* Mobile & Tablet Responsive Layout */
+
+/* Small phones: up to 375px */
+@media screen and (max-width: 375px) {
+    main {
+        flex-direction: column; /* stack sections vertically */
+        margin-top: 30px;       /* smaller top spacing */
+        align-items: center;
+    }
+
+    section, .input-section {
+        width: 90%;             /* almost full width */
+        height: auto;           /* let content dictate height */
+        margin: 10px 0;         /* vertical spacing between sections */
+        padding: 15px;          /* inner padding */
+    }
+
+    .city-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .city { margin-right: 0; margin-bottom: 8px; }
+
+    .weather {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 25px;
+    }
+
+    .weather p {
+        width: 80%;
+        margin: 0 0 15px 0;
+    }
+
+    button, select {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    #cloud { font-size: 50px; }
+    #sun { font-size: 25px; margin-left: -20px; margin-top: -2px; }
+}
+
+/* Medium phones & small tablets: up to 768px */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        margin-top: 50px;
+        align-items: center;
+    }
+
+    section, .input-section {
+        width: 80%;
+        height: auto;
+        margin: 15px 0;
+        padding: 20px;
+    }
+
+    .city-container { flex-direction: column; align-items: center; margin-top: 20px; }
+    .city { margin-bottom: 10px; }
+    
+    .weather { flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+    .weather p { width: 100px; margin: 0 10px 15px 0; }
+
+    button, select { width: 80%; margin-bottom: 30px; }
+
+    #cloud { font-size: 60px; }
+    #sun { font-size: 28px; margin-left: -22px; margin-top: -2px; }
+}
